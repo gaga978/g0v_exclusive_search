@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html style="width:100%; height:100%;"  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+
+<title>g0v Exclusive Search</title>
+<link rel="shortcut icon" type="image/png" href="images/favicon.jpg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Search for Github Repo, Hackpad, Hackfoldr.">
+
+<link rel="stylesheet" type="text/css" href="reset.css">
+<link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+<body class="bg-gray">
+  <div class="search_box">
+    <form>
+      <div class="search_bar">
+          <input name="keyword" class="nude_input search_keyword" value="萌典" />
+      </div>
+    </form>
+
+    <div class="result_box">
+      <div class="sources_tabbar">
+        <button type="button" class="tabbable nude_input source_tab source_tab_highlighted" for="fromGithub">Github</button>
+        <button type="button" class="tabbable nude_input source_tab" for="fromHackpad">Hackpad</button>
+        <button type="button" class="tabbable nude_input source_tab" for="fromHackfoldr">Hackfoldr</button>
+      </div>
+
+      <section class="tabbable WtabPage result_rows" id="fromGithub">
+        <div class="result_row">
+          <div class=""><a href="#" class="github_name">wildjcrt/moedict-extension</a></div>
+          <div class="github_description">蔡中涵委員阿美語字典</div>
+          <div class="highlighted_content"># amis-safolu\n\n感謝 cpyang 將 PDF 原稿轉為 TXT 檔~\n\n\n# License\n\n蔡中涵委員 g0v 阿美語<em>萌</em><em>典</em>計劃使用本字<em>典</em>，以 CC BY-NC 授權宣告。\n</div>
+        </div>
+
+        <div class="result_row">
+          <div class=""><a href="#" class="github_name">wildjcrt/moedict-extension</a></div>
+          <div class="github_description">蔡中涵委員阿美語字典</div>
+          <div class="highlighted_content"># amis-safolu\n\n感謝 cpyang 將 PDF 原稿轉為 TXT 檔~\n\n\n# License\n\n蔡中涵委員 g0v 阿美語<em>萌</em><em>典</em>計劃使用本字<em>典</em>，以 CC BY-NC 授權宣告。\n</div>
+        </div>
+
+        <div class="result_row">
+          <div class=""><a href="#" class="github_name">wildjcrt/moedict-extension</a></div>
+          <div class="github_description">蔡中涵委員阿美語字典</div>
+          <div class="highlighted_content"># amis-safolu\n\n感謝 cpyang 將 PDF 原稿轉為 TXT 檔~\n\n\n# License\n\n蔡中涵委員 g0v 阿美語<em>萌</em><em>典</em>計劃使用本字<em>典</em>，以 CC BY-NC 授權宣告。\n</div>
+        </div>
+      </section>
+
+      <section class="tabbable WtabPage result_rows" id="fromHackpad">
+        <div class="result_row">
+          <div class=""><a href="#" class="hackpad_name">9 月萌典松: moed6ct 短講「萌典考」</a></div>
+          <div class="highlighted_content">9 月<em>萌</em><em>典</em>松</div>
+          <div class="highlighted_content">moed6ct 短講「<em>萌</em><em>典</em>考」目的將<em>萌</em><em>典</em>重要開發時刻與所解決的問題相連結，甚至標出與</div>
+          <div class="highlighted_content">[COSCUP 2013] Audrey - <em>萌</em><em>典</em>與零時政府[漢字產業創意工作坊 20140726] Audrey - <em>萌</em><em>典</em>與零時政府</div>
+        </div>
+      </section>
+
+      <section class="tabbable WtabPage result_rows" id="fromHackfoldr">
+        <div class="result_row">
+          <div class=""><a href="#" class="hackpad_name">tai5-uan5_gian5-gi2_phing5-thai5</a></div>
+          <div class="highlighted_content">MoeDict - <em>萌</em><em>典</em></div>
+        </div>
+      </section>
+
+      <div class="pagination text-align-center">
+        <a href="#" class="pagination_button"><</a>
+        <a href="#" class="pagination_button">1</a>
+        <a href="#" class="pagination_button">2</a>
+        <a href="#" class="pagination_button">3</a>
+        <a href="#" class="pagination_button">4</a>
+        <a href="#" class="pagination_button">5</a>
+        <a href="#" class="pagination_button">6</a>
+        <a href="#" class="pagination_button">7</a>
+        <a href="#" class="pagination_button">8</a>
+        <a href="#" class="pagination_button">></a>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+  var tabbableNodes = document.getElementsByClassName('tabbable');
+  var tabs=[], tabPages=[];
+  var handleTabClick = function(event) {
+    tabs.forEach(function(tab) {
+      tab.classList.remove('source_tab_highlighted');
+    });
+    tabPages.forEach(function(tabPage) {
+      tabPage.style.display = 'none';
+    });
+    event.target.classList.add('source_tab_highlighted');
+    event.target.tabPage.style.display = 'block';
+  }
+  for (var i=0; i<tabbableNodes.length; i++) {
+    var tabNode = tabbableNodes.item(i);
+    var tabPageNode = tabbableNodes.namedItem(tabNode.getAttribute('for'));
+    if (tabPageNode) {
+      if (tabNode.classList.contains('source_tab_highlighted')) tabPageNode.style.display = 'block';
+      tabNode.tabPage = tabPageNode;
+      tabNode.onclick = handleTabClick.bind(tabNode);
+      tabs.push(tabNode);
+      tabPages.push(tabPageNode);
+    }
+  }
+</script>
+</body>
+</html>
+
