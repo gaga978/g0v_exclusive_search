@@ -108,13 +108,21 @@ select, button { cursor:pointer; }
   font-size: 14px;
   font-weight: 600;
 }
-.hackpad_name {
-  border-left: 4px solid #5A8873;
-  padding-left: 6px;
+.hackpad_name, .hackfoldr_name {
+  display: inline-block;
+  margin-bottom: 5px;
   font-size: 17px;
   color: #4A4A4A;
   font-weight: bolder;
   text-decoration: none;
+}
+.hackpad_name {
+  border-left: 4px solid #5A8873;
+  padding-left: 6px;
+}
+.hackfoldr_name {
+  padding-left: 24px;
+  background: url('images/folder.png') no-repeat left center;
 }
 
 .pagination {
